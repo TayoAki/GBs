@@ -1,8 +1,9 @@
 name: nightly verification
 
 on:
-  schedule:
-    - cron: "23 2 * * *"
+  # Upstream schedule, off in this fork so it does not run unattended:
+  # schedule:
+  #   - cron: "23 2 * * *"
   workflow_dispatch:
 
 permissions:

@@ -4,8 +4,9 @@ name: Model catalog bump
 # A weekly bump keeps new models (and dropped/renamed ones) flowing in as a
 # reviewable PR instead of a manual dependency chore.
 on:
-  schedule:
-    - cron: "17 6 * * 1"
+  # Upstream schedule, off in this fork so it does not run unattended:
+  # schedule:
+  #   - cron: "17 6 * * 1"
   workflow_dispatch:
 
 # The update job installs and runs unreviewed dependency code, so it gets no

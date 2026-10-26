@@ -7,8 +7,12 @@ if [[ $(id -u) == 0 ]]; then
   exec gosu node "$0"
 fi
 
-export RAILWAY_ENVIRONMENT_ID
-RAILWAY_ENVIRONMENT_ID=$(node infra/railway/sandbox-environment.mjs)
+# Without SANDBOX_PROVIDER=railway (e.g. none while RAILWAY_API_TOKEN is unset) there are no
+# computers, so there is no sandbox environment to resolve.
+if [[ ${SANDBOX_PROVIDER:-railway} == railway ]]; then
+  export RAILWAY_ENVIRONMENT_ID
+  RAILWAY_ENVIRONMENT_ID=$(node infra/railway/sandbox-environment.mjs)
+fi
 # Set DATABASE_MIGRATION_URL to the owner and DATABASE_URL to a runtime login to
 # enforce row-level security; with one URL the app runs as the owner and warns.
 pnpm --filter @rakazo/api db:deploy

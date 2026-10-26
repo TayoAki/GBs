@@ -1,8 +1,9 @@
 name: Weekly dependency updates
 
 on:
-  schedule:
-    - cron: "43 6 * * 2"
+  # Upstream schedule, off in this fork so it does not run unattended:
+  # schedule:
+  #   - cron: "43 6 * * 2"
   workflow_dispatch:
 
 permissions: {}

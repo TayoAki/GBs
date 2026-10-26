@@ -429,7 +429,9 @@ export function createRuntimeContextPolicy(
       (message) =>
         (message as Message & OriginalMetadata).rakazoHistory &&
         !(message as Message & OriginalMetadata).rakazoMessageId &&
-        (text(message).startsWith("Rakazo-owned compacted context through message sequence ") ||
+        (text(message).startsWith(
+          "Hire Shelby-owned compacted context through message sequence ",
+        ) ||
           text(message).startsWith(
             "Memory recalled from earlier conversations that fell outside the visible history.",
           )),

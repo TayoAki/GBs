@@ -1,6 +1,6 @@
-# Contributing to Rakazo
+# Contributing to Hire Shelby
 
-Thanks for helping improve Rakazo. Keep changes focused and testable.
+Thanks for helping improve Hire Shelby. Keep changes focused and testable.
 
 ## Run locally
 

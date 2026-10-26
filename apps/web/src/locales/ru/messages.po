@@ -682,8 +682,8 @@ msgid "An API key is stored for this provider, not a subscription sign-in."
 msgstr "Для этого поставщика сохранен API-ключ, а не вход по подписке."
 
 #: src/pages/memory-providers/HonchoSettingsForm.tsx
-msgid "An existing Honcho peer to read from. Rakazo never writes to it."
-msgstr "Существующий пир Honcho для чтения. Rakazo никогда не записывает в него данные."
+msgid "An existing Honcho peer to read from. Hire Shelby never writes to it."
+msgstr "Существующий пир Honcho для чтения. Hire Shelby никогда не записывает в него данные."
 
 #: src/lib/agent-import-errors.ts
 msgid "An imported API key could not be checked. Try again."
@@ -1229,7 +1229,7 @@ msgstr "Выбрать папку"
 
 #: src/components/ModelCredits.tsx
 #: src/components/SubscriptionGate.tsx
-msgid "Choose how to use Rakazo"
+msgid "Choose how to use Hire Shelby"
 msgstr ""
 
 #: src/lib/localized-provider-hint.ts
@@ -1518,8 +1518,8 @@ msgstr "Подключить Treg"
 
 #. js-lingui-explicit-id
 #: src/lib/run-error.ts
-msgid "Connect your own API key in Models or choose Rakazo credits in Billing."
-msgstr "Подключите свой API-ключ в разделе «Модели» или выберите кредиты Rakazo в разделе «Оплата»."
+msgid "Connect your own API key in Models or choose Hire Shelby credits in Billing."
+msgstr "Подключите свой API-ключ в разделе «Модели» или выберите кредиты Hire Shelby в разделе «Оплата»."
 
 #: src/components/integrations/IntegrationSetup.tsx
 #: src/pages/McpOAuthCallback.tsx
@@ -2119,8 +2119,8 @@ msgid "Create space"
 msgstr "Создайте пространство"
 
 #: src/pages/Auth.tsx
-msgid "Create your Rakazo"
-msgstr "Создайте свой Rakazo"
+msgid "Create your Hire Shelby"
+msgstr "Создайте свой Hire Shelby"
 
 #: src/components/AskCard.tsx
 msgid "Created"
@@ -2889,6 +2889,11 @@ msgstr "Высокий"
 msgid "High"
 msgstr "Высокий"
 
+#: src/components/ModelCredits.tsx
+#: src/pages/Onboarding.tsx
+msgid "Hire Shelby credits"
+msgstr ""
+
 #: src/components/composer/HoldToTalk.tsx
 msgid "Hold to talk"
 msgstr "Удерживайте, чтобы говорить"
@@ -2923,7 +2928,7 @@ msgid "How to check"
 msgstr "Как проверить"
 
 #: src/components/SignupSurvey.tsx
-msgid "How will you use Rakazo?"
+msgid "How will you use Hire Shelby?"
 msgstr ""
 
 #: src/pages/shell/computer-release-actions.tsx
@@ -3844,8 +3849,8 @@ msgid "Not imported"
 msgstr "Не импортировано"
 
 #: src/pages/shell/import-status.ts
-msgid "Not in Rakazo's catalog"
-msgstr "Нет в каталоге Rakazo"
+msgid "Not in Hire Shelby's catalog"
+msgstr "Нет в каталоге Hire Shelby"
 
 #: src/pages/PluginsOverlay.tsx
 msgid "Not in the plugin catalog"
@@ -3857,12 +3862,12 @@ msgstr "Не сейчас"
 
 #: src/pages/shell/agent-import.tsx
 #: src/pages/shell/import-status.ts
-msgid "Not supported in Rakazo"
-msgstr "Не поддерживается в Rakazo"
+msgid "Not supported in Hire Shelby"
+msgstr "Не поддерживается в Hire Shelby"
 
 #: src/pages/shell/agent-import.tsx
-msgid "Not used by Rakazo"
-msgstr "Не используется в Rakazo"
+msgid "Not used by Hire Shelby"
+msgstr "Не используется в Hire Shelby"
 
 #: src/components/McpServerHealthLine.tsx
 msgid "Not working"
@@ -4094,8 +4099,8 @@ msgid "Paste a replacement key"
 msgstr "Вставьте запасной ключ"
 
 #: src/pages/model-settings/compatible-model-fields.tsx
-msgid "Paste the OpenAI-compatible address from your server. Rakazo adds /v1 if needed."
-msgstr "Вставьте OpenAI-совместимый адрес со своего сервера. При необходимости Rakazo добавляет /v1."
+msgid "Paste the OpenAI-compatible address from your server. Hire Shelby adds /v1 if needed."
+msgstr "Вставьте OpenAI-совместимый адрес со своего сервера. При необходимости Hire Shelby добавляет /v1."
 
 #: src/pages/shell/agent-import.tsx
 msgid "Paste the reply"
@@ -4242,13 +4247,8 @@ msgstr "Запрос на слияние"
 msgid "Queued"
 msgstr "В очереди"
 
-#: src/components/ModelCredits.tsx
-#: src/pages/Onboarding.tsx
-msgid "Rakazo credits"
-msgstr ""
-
 #: src/pages/memory-providers/HonchoSettingsForm.tsx
-msgid "rakazo-shared and IDs starting with bot- are reserved for Rakazo."
+msgid "rakazo-shared and IDs starting with bot- are reserved for Hire Shelby."
 msgstr ""
 
 #: src/pages/shell/message-hover-actions.tsx
@@ -4604,8 +4604,8 @@ msgid "Return to call with {0}"
 msgstr "Вернуться к звонку с {0}"
 
 #: src/pages/McpOAuthCallback.tsx
-msgid "Return to Rakazo"
-msgstr "Вернуться в Rakazo"
+msgid "Return to Hire Shelby"
+msgstr "Вернуться в Hire Shelby"
 
 #: src/lib/model-connection-preflight.ts
 msgid "Review provider settings and test again."
@@ -5009,8 +5009,8 @@ msgid "Sign in at <0>{0}</0>, then paste the code here."
 msgstr "Войдите на <0>{0}</0>, затем вставьте код сюда."
 
 #: src/pages/Auth.tsx
-msgid "Sign in to Rakazo"
-msgstr "Войти в Rakazo"
+msgid "Sign in to Hire Shelby"
+msgstr "Войти в Hire Shelby"
 
 #: src/lib/user-error.ts
 msgid "Sign in to your existing account to link SSO"
@@ -5234,8 +5234,8 @@ msgid "Subscribe for ${0} / month"
 msgstr "Подписаться за ${0} / месяц"
 
 #: src/components/ModelCredits.tsx
-msgid "Subscribe to Rakazo credits"
-msgstr "Оформить подписку на кредиты Rakazo"
+msgid "Subscribe to Hire Shelby credits"
+msgstr "Оформить подписку на кредиты Hire Shelby"
 
 #: src/components/ModelCredits.tsx
 msgid "Subscribe with your own AI"
@@ -5517,8 +5517,8 @@ msgid "This server is already connected. Disconnect it first to authorize again.
 msgstr "Этот сервер уже подключен. Сначала отключите его, чтобы авторизоваться снова."
 
 #: src/pages/model-settings/connection-controls.tsx
-msgid "This subscription sign-in is not available in Rakazo yet. Use a deployment credential or choose another provider."
-msgstr "Вход по этой подписке пока недоступен в Rakazo. Используйте учетные данные развертывания или выберите другого поставщика."
+msgid "This subscription sign-in is not available in Hire Shelby yet. Use a deployment credential or choose another provider."
+msgstr "Вход по этой подписке пока недоступен в Hire Shelby. Используйте учетные данные развертывания или выберите другого поставщика."
 
 #: src/pages/Artifacts.tsx
 msgid "This week"
@@ -5797,15 +5797,15 @@ msgid "Use defaults for {label}"
 msgstr "Использовать ваши настройки: {label}"
 
 #: src/components/ModelCredits.tsx
+msgid "Use Hire Shelby credits"
+msgstr ""
+
+#: src/components/ModelCredits.tsx
 msgid "Use my subscription or API key"
 msgstr ""
 
 #: src/components/teach/TeachRecordingChrome.tsx
 msgid "Use Protected input for passwords."
-msgstr ""
-
-#: src/components/ModelCredits.tsx
-msgid "Use Rakazo credits"
 msgstr ""
 
 #: src/pages/model-settings/space-bots-model.tsx
@@ -5920,7 +5920,7 @@ msgid "Weekends"
 msgstr "По выходным"
 
 #: src/components/SignupSurvey.tsx
-msgid "Welcome to Rakazo"
+msgid "Welcome to Hire Shelby"
 msgstr ""
 
 #: src/pages/shell/dialogs.tsx
@@ -5928,7 +5928,7 @@ msgid "What about its memories?"
 msgstr "Что делать с его памятью?"
 
 #: src/components/SignupSurvey.tsx
-msgid "What do you most want Rakazo to help with?"
+msgid "What do you most want Hire Shelby to help with?"
 msgstr ""
 
 #: src/pages/shell/message-cards.tsx

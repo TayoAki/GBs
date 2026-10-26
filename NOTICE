@@ -1,0 +1,13 @@
+Hire Shelby
+Copyright 2026 the Hire Shelby contributors
+
+This product is a modified version of Rakazo (https://github.com/elie222/rakazo),
+Copyright Inbox Zero Inc. and the Rakazo contributors, licensed under the Apache
+License, Version 2.0. See LICENSE.
+
+Changes from upstream: the product's display name was changed from "Rakazo" to
+"Hire Shelby", scheduled GitHub workflows were turned off, and the Railway start
+script can run without a sandbox provider. Internal identifiers (package names,
+environment variables, database roles, image names and bundle identifiers) still
+use "rakazo". The Rakazo name and logo belong to their owner; the Apache License
+grants no rights to them.

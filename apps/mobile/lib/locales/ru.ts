@@ -99,8 +99,8 @@ export const RU_MESSAGES: Record<string, string> = {
   "Your model provider": "Ваш поставщик моделей",
   "Connect a model in Settings before running bots.":
     "Подключите модель в настройках, прежде чем запускать ботов.",
-  "Connect your own API key in Models or choose Rakazo credits in Billing.":
-    "Подключите свой API-ключ в разделе «Модели» или выберите кредиты Rakazo в разделе «Оплата».",
+  "Connect your own API key in Models or choose Hire Shelby credits in Billing.":
+    "Подключите свой API-ключ в разделе «Модели» или выберите кредиты Hire Shelby в разделе «Оплата».",
   "The model provider returned an error.": "Поставщик моделей вернул ошибку.",
   "{provider} is rate limiting requests. Try again shortly.":
     "{provider} ограничивает частоту запросов. Повторите попытку чуть позже.",
@@ -591,8 +591,8 @@ export const RU_MESSAGES: Record<string, string> = {
   "Photo library": "Библиотека фотографий",
   Pin: "Закрепить",
   "Please try again.": "Повторите попытку.",
-  "Point this app at your self-hosted Rakazo origin, the same HTTPS URL you open in a browser.":
-    "Направьте это приложение на свой собственный источник Rakazo, тот же URL-адрес HTTPS, который вы открываете в браузере.",
+  "Point this app at your self-hosted Hire Shelby origin, the same HTTPS URL you open in a browser.":
+    "Направьте это приложение на свой собственный источник Hire Shelby, тот же URL-адрес HTTPS, который вы открываете в браузере.",
   Private: "Личный",
   Profile: "Профиль",
   Providers: "Провайдеры",
@@ -658,10 +658,10 @@ export const RU_MESSAGES: Record<string, string> = {
   "Show more": "Показать ещё",
   "Show {label}": "Показать {label}",
   "Sign in": "Войти",
-  "Sign in to Rakazo": "Войти в Rakazo",
+  "Sign in to Hire Shelby": "Войти в Hire Shelby",
   "Sign out": "Выйти",
   "Sign up": "Зарегистрироваться",
-  "Sign up for Rakazo": "Зарегистрироваться в Rakazo",
+  "Sign up for Hire Shelby": "Зарегистрироваться в Hire Shelby",
   "Sign-in": "Вход",
   "Sign-up": "Регистрация",
   "Sign-in did not return a session": "Вход не вернул сессию",
@@ -694,7 +694,7 @@ export const RU_MESSAGES: Record<string, string> = {
   Team: "Команда",
   "Team Computer": "Командный компьютер",
   "That doesn’t look like a URL": "Это не похоже на URL",
-  "That URL did not look like a Rakazo server": "Этот адрес не похож на сервер Rakazo",
+  "That URL did not look like a Hire Shelby server": "Этот адрес не похож на сервер Hire Shelby",
   "That URL is missing a host": "Для этого URL-адреса отсутствует хост",
   "The server changed while starting the request": "Сервер изменился при запуске запроса",
   "This permanently deletes your account, bots, conversations, memories, files, and saved connections. This cannot be undone.":
@@ -783,8 +783,8 @@ export const RU_MESSAGES: Record<string, string> = {
   "Open conversation": "Открыть диалог",
   "Open in full window": "Открыть в полном окне",
   "OpenAPI JSON": "OpenAPI JSON",
-  "Paste the OpenAI-compatible address from your server. Rakazo adds /v1 if needed.":
-    "Вставьте OpenAI-совместимый адрес со своего сервера. При необходимости Rakazo добавляет /v1.",
+  "Paste the OpenAI-compatible address from your server. Hire Shelby adds /v1 if needed.":
+    "Вставьте OpenAI-совместимый адрес со своего сервера. При необходимости Hire Shelby добавляет /v1.",
   Paused: "Приостановлено",
   Prompt: "Промпт",
   "Recording a live demonstration needs desktop or web with the full computer view. You can still ask this bot to run saved skills from chat.":
@@ -800,8 +800,8 @@ export const RU_MESSAGES: Record<string, string> = {
   "Delete {name} and its {count} bots?": "Удалить {name} и его ботов ({count})?",
   "This removes every message and stops current work. The bot, computer, memory, and routines are kept.":
     "Это удалит все сообщения и остановит текущую работу. Бот, компьютер, память и задачи сохранятся.",
-  "This subscription sign-in is not available in Rakazo yet. Use a deployment credential or choose another provider.":
-    "Вход по этой подписке пока недоступен в Rakazo. Используйте учётные данные развёртывания или выберите другого провайдера.",
+  "This subscription sign-in is not available in Hire Shelby yet. Use a deployment credential or choose another provider.":
+    "Вход по этой подписке пока недоступен в Hire Shelby. Используйте учётные данные развёртывания или выберите другого провайдера.",
   "Tool sources": "Источники инструментов",
   Tools: "Инструменты",
   Uninstall: "Удалить",
@@ -908,7 +908,7 @@ export const RU_MESSAGES: Record<string, string> = {
   "AI models": "Модели ИИ",
   Memory: "Память",
   "Privacy policies": "Политики конфиденциальности",
-  Rakazo: "Rakazo",
+  "Hire Shelby": "Hire Shelby",
   "Withdraw all permissions": "Отозвать все разрешения",
   "Withdraw all permissions?": "Отозвать все разрешения?",
   "New mobile actions won't send data to these services. Runs already in progress and routines keep going until you stop them.":
@@ -1031,7 +1031,7 @@ export const RU_MESSAGES: Record<string, string> = {
   "Use my subscription or API key": "Использовать свою подписку или API-ключ",
   "Monthly credits expire at renewal. Top-ups do not expire.":
     "Ежемесячные кредиты истекают при продлении. Разовые пополнения не сгорают.",
-  "Use Rakazo credits": "Использовать кредиты Rakazo",
+  "Use Hire Shelby credits": "Использовать кредиты Hire Shelby",
   "1 unread": "1 непрочитанный",
   "{count} unread": "Непрочитанных: {count}",
   "{count} need attention": "Требуют внимания: {count}",
@@ -1039,12 +1039,12 @@ export const RU_MESSAGES: Record<string, string> = {
   "{label}, below": "{label}, ниже",
   Work: "Работа",
   Both: "И то, и другое",
-  "How will you use Rakazo?": "Как вы будете использовать Rakazo?",
-  "What do you most want Rakazo to help with?":
-    "С чем Rakazo должен помогать вам в первую очередь?",
+  "How will you use Hire Shelby?": "Как вы будете использовать Hire Shelby?",
+  "What do you most want Hire Shelby to help with?":
+    "С чем Hire Shelby должен помогать вам в первую очередь?",
   "How big is your team?": "Сколько человек в вашей команде?",
   "How did you hear about us?": "Как вы о нас узнали?",
-  "Welcome to Rakazo": "Добро пожаловать в Rakazo",
+  "Welcome to Hire Shelby": "Добро пожаловать в Hire Shelby",
   Messaging: "Сообщения",
   Unlink: "Отвязать",
   "Connect a chat app": "Подключить чат-приложение",

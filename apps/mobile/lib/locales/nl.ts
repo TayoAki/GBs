@@ -100,8 +100,8 @@ export const NL_MESSAGES: Record<string, string> = {
   "Your model provider": "Jouw modelaanbieder",
   "Connect a model in Settings before running bots.":
     "Verbind een model in Instellingen voordat je bots uitvoert.",
-  "Connect your own API key in Models or choose Rakazo credits in Billing.":
-    "Verbind je eigen API-sleutel bij Modellen of kies Rakazo-tegoed bij Facturatie.",
+  "Connect your own API key in Models or choose Hire Shelby credits in Billing.":
+    "Verbind je eigen API-sleutel bij Modellen of kies Hire Shelby-tegoed bij Facturatie.",
   "The model provider returned an error.": "De modelaanbieder heeft een fout teruggegeven.",
   "{provider} is rate limiting requests. Try again shortly.":
     "{provider} beperkt het aantal verzoeken. Probeer het zo nog eens.",
@@ -163,8 +163,8 @@ export const NL_MESSAGES: Record<string, string> = {
   "Chat Settings": "Chatinstellingen",
   "Configure a plugin catalog on the server to connect apps.":
     "Configureer een plugincatalogus op de server om apps te koppelen.",
-  "Paste the OpenAI-compatible address from your server. Rakazo adds /v1 if needed.":
-    "Plak het OpenAI-compatibele adres van je server. Rakazo voegt zo nodig /v1 toe.",
+  "Paste the OpenAI-compatible address from your server. Hire Shelby adds /v1 if needed.":
+    "Plak het OpenAI-compatibele adres van je server. Hire Shelby voegt zo nodig /v1 toe.",
   "Settings: General": "Instellingen: algemeen",
   "Settings: Usage": "Instellingen: gebruik",
   "Sign-in did not return a session": "De aanmelding gaf geen sessie terug",
@@ -204,9 +204,9 @@ export const NL_MESSAGES: Record<string, string> = {
   "Reset your password": "Je wachtwoord opnieuw instellen",
   "Send reset link": "Herstellingslink verzenden",
   Server: "Server",
-  "Sign in to Rakazo": "Aanmelden bij Rakazo",
+  "Sign in to Hire Shelby": "Aanmelden bij Hire Shelby",
   "Sign up": "Registreren",
-  "Sign up for Rakazo": "Registreer je voor Rakazo",
+  "Sign up for Hire Shelby": "Registreer je voor Hire Shelby",
   "Use a custom server": "Gebruik een eigen server",
   "Use default server": "Gebruik de standaardserver",
   Activity: "Activiteit",
@@ -520,8 +520,8 @@ export const NL_MESSAGES: Record<string, string> = {
   "Supports images": "Ondersteunt afbeeldingen",
   "Supports thinking": "Ondersteunt denken",
   "Then paste the code here.": "Plak daarna de code hier.",
-  "This subscription sign-in is not available in Rakazo yet. Use a deployment credential or choose another provider.":
-    "Deze abonnementsaanmelding is nog niet beschikbaar in Rakazo. Gebruik een implementatiegegeven of kies een andere aanbieder.",
+  "This subscription sign-in is not available in Hire Shelby yet. Use a deployment credential or choose another provider.":
+    "Deze abonnementsaanmelding is nog niet beschikbaar in Hire Shelby. Gebruik een implementatiegegeven of kies een andere aanbieder.",
   "Use a found model": "Een gevonden model gebruiken",
   "Waiting for sign-in…": "Wachten op aanmelding…",
   "exact-model-id": "exact-model-id",
@@ -798,7 +798,7 @@ export const NL_MESSAGES: Record<string, string> = {
   "Enter a server URL": "Voer een server-URL in",
   "Public servers need https://. HTTP only works on your local network.":
     "Openbare servers vereisen https://. HTTP werkt alleen op je lokale netwerk.",
-  "That URL did not look like a Rakazo server": "Die URL leek geen Rakazo-server",
+  "That URL did not look like a Hire Shelby server": "Die URL leek geen Hire Shelby-server",
   "That URL is missing a host": "Die URL mist een host",
   "That doesn’t look like a URL": "Dat lijkt geen URL",
   "Use an http or https URL": "Gebruik een http- of https-URL",
@@ -866,7 +866,7 @@ export const NL_MESSAGES: Record<string, string> = {
   "AI models": "AI-modellen",
   Memory: "Geheugen",
   "Privacy policies": "Privacybeleid",
-  Rakazo: "Rakazo",
+  "Hire Shelby": "Hire Shelby",
   "Withdraw all permissions": "Alle toestemmingen intrekken",
   "Withdraw all permissions?": "Alle toestemmingen intrekken?",
   "New mobile actions won't send data to these services. Runs already in progress and routines keep going until you stop them.":
@@ -990,7 +990,7 @@ export const NL_MESSAGES: Record<string, string> = {
   "Use my subscription or API key": "Mijn abonnement of API-sleutel gebruiken",
   "Monthly credits expire at renewal. Top-ups do not expire.":
     "Maandelijks tegoed vervalt bij verlenging. Los gekocht tegoed verloopt niet.",
-  "Use Rakazo credits": "Rakazo-tegoed gebruiken",
+  "Use Hire Shelby credits": "Hire Shelby-tegoed gebruiken",
   "1 unread": "1 ongelezen",
   "{count} unread": "{count} ongelezen",
   "{count} need attention": "{count} vragen aandacht",
@@ -998,11 +998,11 @@ export const NL_MESSAGES: Record<string, string> = {
   "{label}, below": "{label}, onder",
   Work: "Werk",
   Both: "Allebei",
-  "How will you use Rakazo?": "Hoe ga je Rakazo gebruiken?",
-  "What do you most want Rakazo to help with?": "Waarmee wil je vooral hulp van Rakazo?",
+  "How will you use Hire Shelby?": "Hoe ga je Hire Shelby gebruiken?",
+  "What do you most want Hire Shelby to help with?": "Waarmee wil je vooral hulp van Hire Shelby?",
   "How big is your team?": "Hoe groot is je team?",
   "How did you hear about us?": "Hoe heb je over ons gehoord?",
-  "Welcome to Rakazo": "Welkom bij Rakazo",
+  "Welcome to Hire Shelby": "Welkom bij Hire Shelby",
   Messaging: "Berichten",
   Unlink: "Ontkoppelen",
   "Connect a chat app": "Chat-app koppelen",

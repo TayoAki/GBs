@@ -106,7 +106,7 @@ test("choose your own key or monthly credits, then add a one-time top-up", async
   await expect(page.getByRole("heading", { name: "Choose how to use Hire Shelby" })).toBeVisible();
   await expect(page.getByText("$10 / month", { exact: true })).toBeVisible();
   await expect(
-    page.getByText("Works with your ChatGPT or Claude plan.", { exact: true }),
+    page.getByText("Works with your API key or ChatGPT plan.", { exact: true }),
   ).toBeVisible();
   await expect(
     page.getByRole("button", { name: "Subscribe with your own AI", exact: true }),

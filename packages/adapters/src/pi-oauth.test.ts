@@ -1206,7 +1206,7 @@ describe("PiOAuthLogins", () => {
   it.each(["openrouter", "openai"])("rejects subscription sign-in for %s", async (provider) => {
     const logins = new PiOAuthLogins();
     await expect(logins.begin({ userId: "u", spaceId: "w", provider })).rejects.toThrow(
-      /ChatGPT Plus\/Pro, Claude Pro\/Max, GitHub Copilot, and SuperGrok/,
+      /ChatGPT Plus\/Pro, GitHub Copilot, and SuperGrok/,
     );
   });
 

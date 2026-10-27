@@ -4689,6 +4689,15 @@ describe("model credential persistence", () => {
     expect(begin).toHaveBeenLastCalledWith(expect.objectContaining({ credentialId: null }));
   });
 
+  it("refuses Claude subscription sign-in, which connects with an API key only", async () => {
+    const { deps, handler } = persistDeps();
+    const begin = vi.fn();
+    Object.assign(deps.oauthLogins, { begin });
+
+    expect((await call(handler, "models/beginOAuth", { provider: "anthropic" })).status).toBe(400);
+    expect(begin).not.toHaveBeenCalled();
+  });
+
   it("names a second subscription account by the email it signed in with", async () => {
     const { finish, deps, handler } = persistDeps();
     const access = `fake.${Buffer.from(

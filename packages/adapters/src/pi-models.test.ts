@@ -318,13 +318,11 @@ describe("Pi model catalog", () => {
     expect(copilot?.signIn).toBe("device-code");
     const grok = catalog.find((entry) => entry.provider === "xai");
     expect(grok?.signIn).toBe("device-code");
+    // Claude Pro/Max sign-in is reserved for Anthropic's own apps, so Claude takes a key only.
     const claude = catalog.find((entry) => entry.provider === "anthropic");
-    expect(claude).toMatchObject({
-      signIn: "auth-url",
-      authHint: "Claude Pro/Max / key",
-      oauthLabel: "Sign in with Claude",
-      billing: "",
-    });
+    expect(claude?.signIn).toBeUndefined();
+    expect(claude?.authHint).toBeUndefined();
+    expect(claude?.billing).toMatch(/Anthropic API key/);
     expect(scriptedCatalogEntry.provider).toBe("scripted");
   });
 

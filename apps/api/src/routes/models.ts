@@ -4,6 +4,7 @@ import {
   listPiCatalog,
   modelCredentialDto,
   oauthCredentialEmail,
+  offeredSignIn,
   prepareStoredModelAuth,
   probeCatalogProviderModels,
   probeOpenAiCompatibleModels,
@@ -287,6 +288,10 @@ export function modelsRoutes(ctx: RouterContext) {
         }
       }),
       beginOAuth: authed.models.beginOAuth.handler(async ({ context, input }) => {
+        if (!offeredSignIn(input.provider))
+          throw new ORPCError("BAD_REQUEST", {
+            message: "Subscription sign-in is not available for this provider. Connect an API key.",
+          });
         // An older app's sign-in renews the provider's newest connection, bound now so a
         // disconnect of that connection retires it and it never lands on another one.
         const target = await modelConnectionTarget(

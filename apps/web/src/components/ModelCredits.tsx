@@ -161,7 +161,7 @@ export function CreditChoice({
               )}
             </p>
             <p className="text-sm text-muted-foreground">
-              <Trans>Works with your ChatGPT or Claude plan.</Trans>
+              <Trans>Works with your API key or ChatGPT plan.</Trans>
             </p>
             <ul className="space-y-3 text-sm">
               {features.map((feature) => (

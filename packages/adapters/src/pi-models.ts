@@ -9,7 +9,7 @@ import {
 } from "@rakazo/contracts";
 import { LOCAL_PROVIDER_ID, registerLocalProvider } from "./pi-local-provider.js";
 import { applyPiModelCompatibility } from "./pi-model-compat.js";
-import { loadProviderOAuth, SUBSCRIPTION_SIGN_IN_PROVIDERS } from "./pi-oauth.js";
+import { loadProviderOAuth, offeredSignIn } from "./pi-oauth.js";
 import {
   OPENAI_COMPATIBLE_PROVIDER_ID,
   probeOpenAiCompatibleModels,
@@ -273,7 +273,7 @@ function buildPiCatalog(): PiCatalogEntry[] {
     const oauthAuth = loadProviderOAuth(provider.id);
     const oauth = Boolean(oauthAuth);
     const auth: PiCatalogAuth = apiKey && oauth ? "both" : oauth ? "oauth" : "api-key";
-    const signInMeta = SUBSCRIPTION_SIGN_IN_PROVIDERS[provider.id];
+    const signInMeta = offeredSignIn(provider.id);
     const oauthLabel = signInMeta?.loginLabel ?? oauthAuth?.loginLabel ?? oauthAuth?.name;
     const subscription = Boolean(oauthAuth?.isSubscription);
     const billing = catalogBilling(provider.id, providerName, {
@@ -384,7 +384,7 @@ function catalogBilling(
   name: string,
   opts: { apiKey: boolean; oauth: boolean },
 ) {
-  const signInMeta = SUBSCRIPTION_SIGN_IN_PROVIDERS[providerId];
+  const signInMeta = offeredSignIn(providerId);
   if (signInMeta) return signInMeta.billing;
   if (providerId === LOCAL_PROVIDER_ID) {
     return "Runs on infrastructure configured by the server operator. No model charges from Hire Shelby.";

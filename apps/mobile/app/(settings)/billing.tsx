@@ -206,10 +206,10 @@ export default function BillingScreen() {
               label={t("Your subscription or API key")}
               footer={
                 status.byokPriceCents
-                  ? t("{price} / month. Works with your ChatGPT or Claude plan.", {
+                  ? t("{price} / month. Works with your API key or ChatGPT plan.", {
                       price: `$${status.byokPriceCents / 100}`,
                     })
-                  : t("Free. Works with your ChatGPT or Claude plan.")
+                  : t("Free. Works with your API key or ChatGPT plan.")
               }
             >
               <SettingsRow

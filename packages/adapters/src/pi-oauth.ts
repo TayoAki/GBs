@@ -75,6 +75,22 @@ export const SUBSCRIPTION_SIGN_IN_PROVIDERS: Record<
   },
 };
 
+/**
+ * The subscription sign-ins Hire Shelby offers. Anthropic's terms reserve Claude Pro/Max sign-in
+ * for Anthropic's own apps, so Claude connects with an API key only.
+ */
+const OFFERED_SIGN_IN_PROVIDERS = new Set([
+  CHATGPT_OAUTH_PROVIDER,
+  COPILOT_OAUTH_PROVIDER,
+  XAI_OAUTH_PROVIDER,
+]);
+
+export function offeredSignIn(provider: string) {
+  return OFFERED_SIGN_IN_PROVIDERS.has(provider)
+    ? SUBSCRIPTION_SIGN_IN_PROVIDERS[provider]
+    : undefined;
+}
+
 const MIN_OAUTH_VALIDITY_MS = 5 * 60 * 1000;
 const SIGN_IN_START_WAIT_MS = 30_000;
 /** How long a sign-in that hands back a code stays open, on any API process. */
@@ -920,7 +936,7 @@ export class PiOAuthLogins {
   ): Promise<PiOAuthBegin> {
     if (!SUBSCRIPTION_SIGN_IN_PROVIDERS[input.provider]) {
       throw new Error(
-        "In-app subscription sign-in is only available for ChatGPT Plus/Pro, Claude Pro/Max, GitHub Copilot, and SuperGrok.",
+        "In-app subscription sign-in is only available for ChatGPT Plus/Pro, GitHub Copilot, and SuperGrok.",
       );
     }
     if (input.signal?.aborted) {

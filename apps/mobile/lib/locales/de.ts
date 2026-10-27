@@ -1029,10 +1029,10 @@ export const DE_MESSAGES: Record<string, string> = {
   "Add credits": "Guthaben hinzufügen",
   "Manage billing": "Abrechnung verwalten",
   "Your subscription or API key": "Dein Abo oder API-Schlüssel",
-  "Free. Works with your ChatGPT or Claude plan.":
-    "Kostenlos. Funktioniert mit deinem ChatGPT- oder Claude-Abo.",
-  "{price} / month. Works with your ChatGPT or Claude plan.":
-    "{price} / Monat. Funktioniert mit deinem ChatGPT- oder Claude-Abo.",
+  "Free. Works with your API key or ChatGPT plan.":
+    "Kostenlos. Funktioniert mit deinem API-Schlüssel oder ChatGPT-Abo.",
+  "{price} / month. Works with your API key or ChatGPT plan.":
+    "{price} / Monat. Funktioniert mit deinem API-Schlüssel oder ChatGPT-Abo.",
   "Free plan ends": "Kostenloser Tarif endet",
   Subscribe: "Abonnieren",
   "Use my subscription or API key": "Mein Abo oder meinen API-Schlüssel verwenden",

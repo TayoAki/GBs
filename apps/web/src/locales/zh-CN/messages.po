@@ -6008,8 +6008,8 @@ msgid "Working…"
 msgstr "处理中…"
 
 #: src/components/ModelCredits.tsx
-msgid "Works with your ChatGPT or Claude plan."
-msgstr "可使用你的 ChatGPT 或 Claude 套餐。"
+msgid "Works with your API key or ChatGPT plan."
+msgstr ""
 
 #: src/pages/memory-providers/HonchoSettingsForm.tsx
 msgid "Workspace"

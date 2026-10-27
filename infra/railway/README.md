@@ -14,10 +14,19 @@ repository instead:
 - A volume mounted at `/data` on the app service, and a public domain targeting port 5173.
 - The app service variables listed by the upstream template: `OWNER_EMAIL`, `OWNER_PASSWORD`,
   `BETTER_AUTH_SECRET`, `ENCRYPTION_KEY` (64 hex characters), `SCREEN_PROXY_SECRET`,
-  `DATABASE_URL=${{Postgres.DATABASE_URL}}`, `BETTER_AUTH_URL` and `WEB_ORIGIN` set to
+  `DATABASE_MIGRATION_URL=${{Postgres.DATABASE_URL}}`, `DATABASE_URL` set to a separate
+  `rakazo_app` login on the same database (startup creates it, so row-level security applies),
+  `BETTER_AUTH_URL` and `WEB_ORIGIN` set to
   `https://${{RAILWAY_PUBLIC_DOMAIN}}`, `RAKAZO_HOST=${{RAILWAY_PUBLIC_DOMAIN}}`, `DATA_DIR=/data`,
   `PORT=5173`, `RAILWAY_RUN_UID=0`, `API_HOST=127.0.0.1`, `API_URL` and `API_PROXY_TARGET` set to
-  `http://127.0.0.1:3100`, `AGENT_RUNTIME=pi`, `WAKEUP_DRIVER=graphile` and `SIGNUPS_ENABLED=false`.
+  `http://127.0.0.1:3100`, `AGENT_RUNTIME=pi`, `WAKEUP_DRIVER=graphile` and `SIGNUPS_ENABLED`
+  (`false` for a personal instance, `true` to let anyone register).
+
+Paid plans need `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` (webhook URL
+`https://<domain>/api/v1/billing/webhook`, events listed in `.env.example`). Selling credits also
+needs a deployment model key such as `OPENROUTER_API_KEY`. Prices live in
+`packages/contracts/src/domain.ts`: `BYOK_MONTHLY_PRICE_CENTS`, `MODEL_CREDIT_AMOUNTS` and
+`MODEL_CREDIT_MARKUP`.
 
 Without a Railway API token, set `SANDBOX_PROVIDER=none`: Hire Shelby runs without bot computers. To
 turn computers on, add `RAILWAY_API_TOKEN` and set `SANDBOX_PROVIDER=railway`.
@@ -31,7 +40,7 @@ The token must be able to create environments and sandboxes in the project. Pref
 
 ## Why Deploy Hire Shelby on Railway
 
-- The initial ordinary account is created before the public web server starts. Public registration is closed on every start; this template is intended for a personal deployment.
+- The initial ordinary account is created before the public web server starts. Registration stays closed unless `SIGNUPS_ENABLED=true`.
 - Every install gets separate random database, authentication, encryption, screen and initial owner secrets. Keep the encryption key and database password stable across redeploys.
 - PostgreSQL has no public endpoint. Only the web port is published; the API binds to loopback.
 - Computers run in a separate, empty Railway environment, so they cannot reach the application's private database network. Startup creates one environment per application service and application environment, then reuses it on restart.

@@ -1,4 +1,5 @@
 import type { ModelCallObserver } from "@rakazo/adapter-kit";
+import { modelCreditCharge } from "@rakazo/contracts";
 import { HOSTED_MODEL_CREDITS_REQUIRED_ERROR } from "@rakazo/core";
 import type { PrismaClient } from "@rakazo/db";
 import {
@@ -22,14 +23,19 @@ export async function hostedModelCreditObserver(
     throw new HostedModelCreditsRequiredError(HOSTED_MODEL_CREDITS_REQUIRED_ERROR);
   return {
     beforeCall: (call) =>
-      reserveModelCredits(prisma, membership.organizationId, call.maxCostUsd ?? Number.NaN, {
-        callId: call.callId,
-        userId: scope.userId,
-        spaceId: scope.spaceId,
-        runId: call.runId,
-        provider: call.provider,
-        model: call.modelId,
-      }),
+      reserveModelCredits(
+        prisma,
+        membership.organizationId,
+        modelCreditCharge(call.maxCostUsd ?? Number.NaN),
+        {
+          callId: call.callId,
+          userId: scope.userId,
+          spaceId: scope.spaceId,
+          runId: call.runId,
+          provider: call.provider,
+          model: call.modelId,
+        },
+      ),
     afterCall: (reservationId, usage) => recordModelCreditReceipt(prisma, reservationId, usage),
     onRequestId: async (id, providerRequestId) => {
       await prisma.modelCreditEntry.updateMany({

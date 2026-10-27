@@ -3,6 +3,7 @@ import type { BillingStatus } from "@rakazo/contracts";
 import {
   DEFAULT_MONTHLY_CREDIT_AMOUNT,
   MODEL_CREDIT_AMOUNTS,
+  MODEL_CREDIT_MARKUP,
   ModelCreditAmountSchema,
 } from "@rakazo/contracts";
 import {
@@ -30,6 +31,7 @@ import { rpc } from "../lib/rpc";
 import { useSignOut } from "../lib/sign-out";
 
 type CreditAmount = (typeof MODEL_CREDIT_AMOUNTS)[number];
+const markupPercent = Math.round((MODEL_CREDIT_MARKUP - 1) * 100);
 
 export function CreditAmountSelect({
   value,
@@ -190,10 +192,10 @@ export function CreditChoice({
           <CardContent className="flex flex-1 flex-col gap-4">
             <CreditAmountSelect monthly value={amount} onChange={setAmount} />
             <p className="text-sm text-muted-foreground">
-              <Trans>All ${amount / 100} goes to model usage.</Trans>
+              <Trans>Usage is charged at model cost plus {markupPercent}%.</Trans>
             </p>
             <ul className="space-y-3 text-sm">
-              {[...features, t`Models at provider cost`].map((feature) => (
+              {features.map((feature) => (
                 <li key={feature} className="flex gap-2">
                   <Check aria-hidden className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
                   <span>{feature}</span>

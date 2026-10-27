@@ -127,7 +127,9 @@ test("choose your own key or monthly credits, then add a one-time top-up", async
   expect(optionsBox!.y).toBeGreaterThanOrEqual(triggerBox!.y + triggerBox!.height);
   await captureScreenshot(page, testInfo, "billing-credit-options");
   await page.keyboard.press("Escape");
-  await expect(page.getByText("All $20 goes to model usage.", { exact: true })).toBeVisible();
+  await expect(
+    page.getByText("Usage is charged at model cost plus 50%.", { exact: true }),
+  ).toBeVisible();
   await captureScreenshot(page, testInfo, "billing-credit-choice");
   let purchase: { amountCents: number; monthly: boolean } | undefined;
   await page.route("**/rpc/billing/purchaseCredits", async (route) => {

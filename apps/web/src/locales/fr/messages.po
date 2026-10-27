@@ -615,11 +615,6 @@ msgstr "Ordinateur de l'agent"
 msgid "Agents:"
 msgstr "Agents :"
 
-#. placeholder {0}: amount / 100
-#: src/components/ModelCredits.tsx
-msgid "All ${0} goes to model usage."
-msgstr "La totalité des ${0} sert à l’utilisation des modèles."
-
 #: src/pages/Artifacts.tsx
 #: src/pages/shell/agent-import.tsx
 msgid "All bots"
@@ -3543,10 +3538,6 @@ msgstr "Options du modèle"
 msgid "Models"
 msgstr "Modèles"
 
-#: src/components/ModelCredits.tsx
-msgid "Models at provider cost"
-msgstr ""
-
 #: src/pages/model-settings/compatible-model-fields.tsx
 #: src/pages/Onboarding.tsx
 msgid "Models from server"
@@ -5760,6 +5751,10 @@ msgstr ""
 #: src/pages/SettingsOverlay.tsx
 msgid "Usage"
 msgstr "Utilisation"
+
+#: src/components/ModelCredits.tsx
+msgid "Usage is charged at model cost plus {markupPercent}%."
+msgstr ""
 
 #. Switches the saved timezone to this device's, e.g. 'Use Pacific/Auckland'
 #. placeholder {0}: deviceTimezone.replaceAll("_", " ")

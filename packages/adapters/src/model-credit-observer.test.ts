@@ -1,4 +1,5 @@
 import type { ModelCallObserver } from "@rakazo/adapter-kit";
+import { modelCreditCharge } from "@rakazo/contracts";
 import { creditAccount, organizationForMember, reserveModelCredits } from "@rakazo/db";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { hostedModelCreditObserver } from "./model-credit-observer.js";
@@ -41,7 +42,7 @@ describe("hosted model credit gate", () => {
       runId: "run-1",
     } as Parameters<ModelCallObserver["beforeCall"]>[0];
     await expect(observer.beforeCall(call)).rejects.toThrow("Not enough model credits");
-    expect(reserveModelCredits).toHaveBeenCalledWith({}, "org-1", 0.02, {
+    expect(reserveModelCredits).toHaveBeenCalledWith({}, "org-1", modelCreditCharge(0.02), {
       ...scope,
       callId: "call-1",
       runId: "run-1",

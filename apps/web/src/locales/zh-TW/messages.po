@@ -616,11 +616,6 @@ msgstr "代理程式電腦"
 msgid "Agents:"
 msgstr "代理程式："
 
-#. placeholder {0}: amount / 100
-#: src/components/ModelCredits.tsx
-msgid "All ${0} goes to model usage."
-msgstr "全部 ${0} 都用於模型用量。"
-
 #: src/pages/Artifacts.tsx
 #: src/pages/shell/agent-import.tsx
 msgid "All bots"
@@ -3544,10 +3539,6 @@ msgstr "模型選項"
 msgid "Models"
 msgstr "模型"
 
-#: src/components/ModelCredits.tsx
-msgid "Models at provider cost"
-msgstr "按供應商成本計價的模型"
-
 #: src/pages/model-settings/compatible-model-fields.tsx
 #: src/pages/Onboarding.tsx
 msgid "Models from server"
@@ -5761,6 +5752,10 @@ msgstr "緊急"
 #: src/pages/SettingsOverlay.tsx
 msgid "Usage"
 msgstr "用量"
+
+#: src/components/ModelCredits.tsx
+msgid "Usage is charged at model cost plus {markupPercent}%."
+msgstr ""
 
 #. Switches the saved timezone to this device's, e.g. 'Use Pacific/Auckland'
 #. placeholder {0}: deviceTimezone.replaceAll("_", " ")

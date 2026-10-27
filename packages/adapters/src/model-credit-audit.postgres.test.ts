@@ -1,4 +1,5 @@
 import type { AgentRuntimeEvent, AgentUsage, ModelUsageLookup } from "@rakazo/adapter-kit";
+import { modelCreditCharge } from "@rakazo/contracts";
 import type { PrismaClient } from "@rakazo/db";
 import {
   asSystem,
@@ -11,6 +12,10 @@ import {
 } from "@rakazo/db";
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { createModelCreditReconciler } from "./model-credit-reconciler.js";
+
+/** The $10 fixture balance after one call settles at this provider cost, markup included. */
+const settled = (costUsd: number) =>
+  10_000_000n - BigInt(Math.ceil(modelCreditCharge(costUsd) * 1_000_000));
 
 const dbTests =
   process.env.VERIFY_DATABASE && process.env.DATABASE_URL ? describe.sequential : describe.skip;
@@ -87,7 +92,7 @@ dbTests("durable model credit audit", () => {
     await recordModelCreditReceipt(prisma, f.callId, f.usage);
     await Promise.all([recordUsage(prisma, f.event, f), recordUsage(prisma, f.event, f)]);
     expect(await prisma.usageRecord.count({ where: { callId: f.callId } })).toBe(1);
-    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(9_750_000n);
+    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(settled(0.25));
     const events = await prisma.billingAuditEvent.findMany({ where: { callId: f.callId } });
     expect(events.filter((e) => e.kind === "reservation")).toHaveLength(1);
     expect(events.filter((e) => e.kind === "settlement")).toHaveLength(1);
@@ -109,7 +114,7 @@ dbTests("durable model credit audit", () => {
     await recordModelCreditReceipt(prisma, f.callId, f.usage);
     await createModelCreditReconciler({ prisma, now: () => new Date(Date.now() + 10 * 60_000) })();
     expect(await prisma.usageRecord.count({ where: { callId: f.callId } })).toBe(1);
-    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(9_750_000n);
+    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(settled(0.25));
     expect(await prisma.modelCreditEntry.findUnique({ where: { callId: f.callId } })).toMatchObject(
       { pending: false, reconciliationState: "complete" },
     );
@@ -131,14 +136,14 @@ dbTests("durable model credit audit", () => {
     });
     await Promise.all([reconcile(), reconcile()]);
     expect(lookup.lookupUsage).toHaveBeenCalledTimes(1);
-    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(9_750_000n);
+    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(settled(0.25));
   });
   it("applies a saved receipt over an existing unknown usage row before completing", async () => {
     const f = await fixture();
     await recordUsage(prisma, { ...f.event, costUsd: null, costSource: null }, f);
     await recordModelCreditReceipt(prisma, f.callId, f.usage);
     await createModelCreditReconciler({ prisma, now: () => new Date(Date.now() + 10 * 60_000) })();
-    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(9_750_000n);
+    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(settled(0.25));
     expect(await prisma.usageRecord.findUnique({ where: { callId: f.callId } })).toMatchObject({
       costUsd: 0.25,
       costSource: "provider-reported",
@@ -197,7 +202,7 @@ dbTests("durable model credit audit", () => {
       lookup: { provider: "openrouter", lookupUsage: async () => f.usage },
       now: () => new Date(Date.now() + 10 * 60_000),
     })();
-    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(9_750_000n);
+    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(settled(0.25));
     const events = await prisma.billingAuditEvent.findMany({
       where: { callId: f.callId, kind: { in: ["usage", "usage_correction", "correction"] } },
     });
@@ -221,7 +226,7 @@ dbTests("durable model credit audit", () => {
     })();
     expect(await prisma.billingAuditEvent.count({ where: { callId: f.callId } })).toBe(before + 2);
     expect(await prisma.usageRecord.count({ where: { callId: f.callId } })).toBe(1);
-    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(9_500_000n);
+    expect((await creditAccount(prisma, f.organizationId)).balanceMicros).toBe(settled(0.5));
   });
   it("corrects every mutable usage bucket and preserves the original pricing evidence", async () => {
     const f = await fixture();

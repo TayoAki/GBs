@@ -1629,8 +1629,14 @@ export type Me = z.infer<typeof MeSchema>;
 
 export const MODEL_CREDIT_AMOUNTS = [1000, 2000, 5000, 10000, 20000, 50000] as const;
 /** Monthly price in cents of running bots on your own model connection; `null` makes it free. */
-export const BYOK_MONTHLY_PRICE_CENTS: number | null = 1000;
+export const BYOK_MONTHLY_PRICE_CENTS: number | null = 1500;
 export const DEFAULT_MONTHLY_CREDIT_AMOUNT = 2000;
+/** Credits also pay for the service, so each dollar of provider cost spends this many credit dollars. */
+export const MODEL_CREDIT_MARKUP = 1.5;
+/** Credit dollars a model call spends for its provider cost in USD. */
+export function modelCreditCharge(costUsd: number) {
+  return costUsd * MODEL_CREDIT_MARKUP;
+}
 export const ModelCreditAmountSchema = z.union(
   MODEL_CREDIT_AMOUNTS.map((amount) => z.literal(amount)),
 );

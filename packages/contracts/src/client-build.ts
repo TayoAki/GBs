@@ -1,5 +1,3 @@
-import { MOBILE_APPS_URL } from "./site.js";
-
 /**
  * Client/server build handshake. Every API request names the client and the build it runs, and
  * every API response names the web build deployed beside the API, so an open tab can tell it is
@@ -18,8 +16,10 @@ export const CLIENT_KINDS = ["web", "mobile"] as const;
 export type ClientKind = (typeof CLIENT_KINDS)[number];
 export type MinimumClientBuilds = Partial<Record<ClientKind, string>>;
 
-export const IOS_APP_STORE_URL = MOBILE_APPS_URL;
-export const ANDROID_APK_URL = MOBILE_APPS_URL;
+// Placeholder until Hire Shelby ships its own apps. A literal, not site.ts: vite.config loads this
+// file directly in Node, which cannot resolve the sibling import.
+export const IOS_APP_STORE_URL = "https://hire-shelby-production.up.railway.app/mobile.html";
+export const ANDROID_APK_URL = IOS_APP_STORE_URL;
 
 const BUILD_ID = /^\d{14}$/;
 

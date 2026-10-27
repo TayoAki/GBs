@@ -1,4 +1,5 @@
 import { Trans, useLingui } from "@lingui/react/macro";
+import { PRIVACY_URL, TERMS_URL } from "@rakazo/contracts";
 import {
   credentialIssue,
   MAX_PASSWORD_LENGTH,
@@ -421,6 +422,21 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
                   )}
                 </p>
               )}
+              {mode === "up" && !codeStep ? (
+                <p className="mt-4 text-sm text-muted-foreground">
+                  <Trans>
+                    By creating an account, you agree to the{" "}
+                    <a href={TERMS_URL} target="_blank" rel="noreferrer" className="underline">
+                      Terms
+                    </a>{" "}
+                    and{" "}
+                    <a href={PRIVACY_URL} target="_blank" rel="noreferrer" className="underline">
+                      Privacy Policy
+                    </a>
+                    .
+                  </Trans>
+                </p>
+              ) : null}
             </>
           ) : null}
         </>

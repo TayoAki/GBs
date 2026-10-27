@@ -1007,6 +1007,10 @@ msgstr ""
 msgid "Built-in"
 msgstr "内置"
 
+#: src/pages/Auth.tsx
+msgid "By creating an account, you agree to the <0>Terms</0> and <1>Privacy Policy</1>."
+msgstr ""
+
 #: src/pages/shell/chat-header.tsx
 msgid "Call"
 msgstr ""

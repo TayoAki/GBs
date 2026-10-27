@@ -1,5 +1,6 @@
 // @vitest-environment jsdom
 import type { DesktopUpdateState } from "@rakazo/contracts";
+import { ANDROID_APK_URL } from "@rakazo/contracts";
 import { Toaster } from "@rakazo/ui-web";
 import type { ReactNode } from "react";
 import { act } from "react";
@@ -165,9 +166,7 @@ it("offers the existing Android download on Android", async () => {
   const mobile = [...document.querySelectorAll("a")].find(
     (link) => link.textContent === "Get the mobile app",
   )!;
-  expect(mobile.href).toBe(
-    "https://github.com/elie222/rakazo/releases/download/android/rakazo.apk",
-  );
+  expect(mobile.href).toBe(ANDROID_APK_URL);
 });
 
 it("falls back when app artwork fails and accepts replacement artwork", async () => {

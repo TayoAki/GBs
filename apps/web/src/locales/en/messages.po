@@ -1007,6 +1007,10 @@ msgstr "Browse MCP servers"
 msgid "Built-in"
 msgstr "Built-in"
 
+#: src/pages/Auth.tsx
+msgid "By creating an account, you agree to the <0>Terms</0> and <1>Privacy Policy</1>."
+msgstr "By creating an account, you agree to the <0>Terms</0> and <1>Privacy Policy</1>."
+
 #: src/pages/shell/chat-header.tsx
 msgid "Call"
 msgstr "Call"

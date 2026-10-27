@@ -85,7 +85,8 @@ export function CreditChoice({
   const features = [
     t`Bots and browser automation`,
     t`Scheduled routines`,
-    t`Web, desktop and mobile`,
+    t`Web`,
+    t`Mobile coming soon`,
   ];
   const [amount, setAmount] = useState<CreditAmount>(DEFAULT_MONTHLY_CREDIT_AMOUNT);
   const [pending, setPending] = useState(false);

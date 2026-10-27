@@ -65,7 +65,8 @@ function LegacyPaywallPage({ status }: { status: BillingStatus }) {
     t`Bots with their own computer and browser`,
     t`Routines that run while you're away`,
     t`Any model, with your own key`,
-    t`Web, desktop and mobile apps`,
+    t`Web`,
+    t`Mobile coming soon`,
   ];
   const title =
     status.canManage && status.price

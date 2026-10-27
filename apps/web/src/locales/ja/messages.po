@@ -3504,6 +3504,11 @@ msgstr "分"
 msgid "Missed call"
 msgstr "不在着信"
 
+#: src/components/ModelCredits.tsx
+#: src/pages/Paywall.tsx
+msgid "Mobile coming soon"
+msgstr ""
+
 #: src/components/ApprovalRulesSettings.tsx
 msgid "Mode"
 msgstr "モード"
@@ -5885,12 +5890,9 @@ msgid "Waiting…"
 msgstr "待機中…"
 
 #: src/components/ModelCredits.tsx
-msgid "Web, desktop and mobile"
-msgstr "Web、デスクトップ、モバイル"
-
 #: src/pages/Paywall.tsx
-msgid "Web, desktop and mobile apps"
-msgstr "Web、デスクトップ、モバイルアプリ"
+msgid "Web"
+msgstr ""
 
 #: src/pages/RoutineEditor.tsx
 msgid "Webhook"

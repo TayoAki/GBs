@@ -3504,6 +3504,11 @@ msgstr "דקות"
 msgid "Missed call"
 msgstr ""
 
+#: src/components/ModelCredits.tsx
+#: src/pages/Paywall.tsx
+msgid "Mobile coming soon"
+msgstr ""
+
 #: src/components/ApprovalRulesSettings.tsx
 msgid "Mode"
 msgstr "מצב"
@@ -5885,12 +5890,9 @@ msgid "Waiting…"
 msgstr "ממתין…"
 
 #: src/components/ModelCredits.tsx
-msgid "Web, desktop and mobile"
-msgstr ""
-
 #: src/pages/Paywall.tsx
-msgid "Web, desktop and mobile apps"
-msgstr "אפליקציות ווב, דסקטופ ומובייל"
+msgid "Web"
+msgstr ""
 
 #: src/pages/RoutineEditor.tsx
 msgid "Webhook"
